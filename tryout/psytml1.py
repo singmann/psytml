@@ -12,9 +12,11 @@ class MyWebPage(QtWebKit.QWebPage):
         return super(MyWebPage, self).acceptNavigationRequest(frame, req, nav_type)
 
 class Window(QtGui.QWidget):
-    def __init__(self, html, elements):
+    def __init__(self, html, elements, size, position):
         super(Window, self).__init__()
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.resize(size[0], size[1])
+        self.move(position[0], position[1])
         view = QtWebKit.QWebView(self)
         layout = QtGui.QVBoxLayout(self)
         layout.addWidget(view)
@@ -50,7 +52,7 @@ Like it?
 def main():
     f1 = {}
     app = QtGui.QApplication(sys.argv)
-    window = Window(html, f1)
+    window = Window(html, f1, (400, 400), (0, 100))
     window.show()
     app.exec_()
     print(f1)
