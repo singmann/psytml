@@ -28,6 +28,6 @@ PsyTML).
 
 The examples folder contains some simple examples.
 
-**The examples/psychopy folder contains PsychoPy1.py a "complete" experiment using PyTML.**
+**The examples/psychopy folder contains PsychoPy1.py a "complete" experiment using PsychoPy and PyTML.**
 
 Henrik Singmann, September 2012
