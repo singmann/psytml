@@ -1,0 +1,122 @@
+<html>
+<head>
+<style type="text/css" media="all">@import "demographics.css";</style>
+<title>Demographics</title>
+<script language="javascript" src="jsval.js"></script>
+</head>
+ <body>
+ <form name="test" method="get" onSubmit="return validateCompleteForm(this, 'error');">
+   <br>
+  <table style="width: 700px; text-align: left" border="0" align="center">
+  <tbody>
+   <tr><td>
+    <table>
+    <tr><td>
+    <span class="big">Zum Schluss, m&ouml;chten wir Sie bitten, noch ein paar Angaben zu Ihrer Person zu machen.</span>
+    </td></tr>
+    </table>
+    <table style="height:50px; width: 100%" border="0" cellpadding="0" cellspacing="0">
+            <tr><td></td></tr></table>
+    <table>
+    <tr>
+     <td style="width:400px"><b>Was ist ihr Geschlecht?</b></td>
+     <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">
+      weiblich<br>
+      <input class="button" required="0" realname="Geschlecht" type="radio" name="sex" value="1">
+     </td>
+     <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">
+      m&auml;nnlich<br>
+      <input class="button" type="radio" name="sex" value="2">
+     </td></tr>
+    </table>
+    <table style="height:50px; width: 100%" border="0" cellpadding="0" cellspacing="0">
+            <tr><td><hr style="vertical-align: middle"></td></tr></table>
+    <table>
+    <tr>
+     <td style="width:400px"><b>Wie alt sind Sie?</b></td>
+     <td style="width:50px; text-align:left; font-size: 75%; font-weight:bold">
+      <input size="1" name="age" minvalue="16" maxvalue="65" required="0" realname="Alter">
+     </td></tr>
+    </table>
+    <table style="height:50px; width: 100%" border="0" cellpadding="0" cellspacing="0">
+            <tr><td><hr style="vertical-align: middle"></td></tr></table>
+    <table>
+    <tr>
+     <td style="width:400px"><b>Ist ihre Muttersprache deutsch?</b></td>
+     <td>
+     <table>
+     <tr>
+      <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">Ja<br><input type="radio" class="button" required="0" realname="Muttersprache" name="deutsch" value="1"></td>
+      <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">Nein<br><input type="radio" class="button" name="deutsch" value="2"></td>
+     </tr>
+     </table>
+      </td>
+      </tr>
+    </table>
+    <table style="height:50px; width: 100%" border="0" cellpadding="0" cellspacing="0">
+            <tr><td><hr style="vertical-align: middle"></td></tr></table>
+    <table>
+    <tr>
+     <td style="width:400px"><b>Wurde bei Ihnen schon einmal Dyslexie diagnostiziert? </b></td>
+     <td>
+     <table>
+     <tr>
+      <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">Ja<br><input type="radio" realname="Dyslexie" class="button" required="0" name="dyslexie" value="1"></td>
+      <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">Nein<br><input type="radio" class="button" name="dyslexie" value="2"></td>
+     </tr>
+    </table>
+    </table>
+    <table style="height:50px; width: 100%" border="0" cellpadding="0" cellspacing="0">
+         <tr><td><hr style="vertical-align: middle"></td></tr></table>
+    <table>
+
+    <tr>
+     <td style="width:400px"><b>Wurde bei Ihnen schon einmal Legasthenie diagnostiziert?</b></td>
+     <td>
+     <table>
+     <tr>
+      <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">Ja<br><input type="radio" class="button" required="0" realname="Legasthenie" name="legasth" value="1"></td>
+      <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">Nein<br><input type="radio" class="button" name="legasth" value="2"></td>
+     </tr>
+     </table>
+     </table>
+
+    <table style="height:50px; width: 100%" border="0" cellpadding="0" cellspacing="0">
+         <tr><td><hr style="vertical-align: middle"></td></tr></table>
+    <table>
+    <tr>
+     <td style="width:400px"><b>Ben&ouml;tigen Sie eine Sehhilfe (Brille, Kontaktlinsen)?</b></td>
+     <td>
+     <table>
+     <tr>
+      <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">Ja<br><input type="radio" class="button" required="0" realname="Brille" name="brille1" value="1"></td>
+      <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">Nein<br><input type="radio" class="button" name="brille1" value="2"></td>
+     </tr>
+     </table>
+     </table>
+     <table style="height:10px; width: 100%" border="0" cellpadding="0" cellspacing="0">
+            <tr><td></td></tr></table>
+            <table>
+            <tr>
+             <td style="width:400px"><b>Wenn ja, haben Sie diese w&auml;hrend des Experiments getragen?</b></td>
+             <td>
+             <table>
+             <tr>
+              <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">Ja<br><input type="radio" class="button" required="0" realname="Brille2" name="brille2" value="1"></td>
+              <td style="width:50px; text-align:center; font-size: 75%; font-weight:bold">Nein<br><input type="radio" class="button" name="brille2" value="2"></td>
+             </tr>
+             </table>
+     </table>
+
+
+    <table style="height:50px; width: 100%" border="0" cellpadding="0" cellspacing="0">
+            <tr><td></td></tr></table>
+    <div align="right"><input class="weiter" value="Weiter" type="submit"></div>
+    <table style="height:50px; width: 100%" border="0" cellpadding="0" cellspacing="0">
+            <tr><td></td></tr></table>
+   </td></tr>
+  </tbody>
+  </table>
+ </form>
+ </body>
+</html>
