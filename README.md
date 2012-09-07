@@ -7,7 +7,8 @@ collected in object.data (i.e. a slot data of the object created by the main cla
 PsyTML).
 
 
-PsyTML.py contains the following classes:
+*PsyTML.py* contains the following classes:
+
 	* PsyTml(self, size, position = True)
 		(create an object for presenting html files)
 		o  *size* is the size of the html in pixel
@@ -27,6 +28,6 @@ PsyTML.py contains the following classes:
 
 The examples folder contains some simple examples.
 
-*The examples/psychopy folder contains PsychoPy1.py a "complete" experiment using PyTML.*
+**The examples/psychopy folder contains PsychoPy1.py a "complete" experiment using PyTML.**
 
 Henrik Singmann, September 2012
