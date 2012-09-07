@@ -1,0 +1,44 @@
+This folder contains an example experiment written by Henrik Singmann in 
+Septemeber 2012 using PsychoPy and PsyTML.
+
+The experiment is contained in PsychoPy1.py, the data is written to the data folder.
+
+Note that you should set your monitor in PsychoPy1.py (line 30) before running the script.
+
+For help on PsyTML.py see PsyTML_README.
+
+helper.py contains a few helper function for running an experiment:
+	* getId(path = ".", filename = 'id.lst', condition = True)
+		(Open a id file and read the next id/number and condition from the file.
+		 Mark the returned number and condition with a *.)
+		o  *path* path to the id file (default is current path)
+		o  *filename* name of the file
+		o  *condition* Should a condition be returned or just a number
+	
+	* writeTrials(header, list, path, expName, id, sep = "\t", part = '', 
+	   extension = '.rtd', mode = 'w', print_header = True)
+		(write a list of dictionanaries with the same keys to the specified path.)
+	
+	* writeDemographics(header, list, path, expName, id, sep = "\t", part = '', 
+	   extension = '.rtd', mode = 'w', print_header = True)
+		(write a list of dictionanaries with the same keys to the specified path.)
+	
+	writeDemographics(header, dict, path, expName, id, condition, sep = "\t", 
+	   extension = '_demographics.dat', mode = 'a')
+		(append a dictionary containing demographic data to a file.)
+		
+	writeComments(comment, path, id, expName)
+		(write comments in a comments folder which will be created if not there.)
+
+id.lst is a file containing the participant numbers (id) and condition. Each line 
+	contains a number and condition seperated by whitespace. Lines whcih already 
+	have been used receive a * at the end.
+
+make.idList.R contains a R function to create a randomized id.lst
+
+html (folder): contains the html, css, and js files with the introduction, stimuli,...
+
+data (folder): data folder
+
+contact: henrik.singmann (at) psychologie.uni-freiburg.de
+

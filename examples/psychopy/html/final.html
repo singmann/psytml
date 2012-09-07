@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <style type="text/css" media="all">@import "demographics.css";</style>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>final</title>
+  <script language="JavaScript">
+<!--
+function check_pw()
+{
+// set var radio_choice to false
+
+if (document.password.password.value != "lmo") {
+	alert("Wrong Password!")
+	return false;
+} 
+}
+-->
+  </script>
+</head>
+<body>
+<table
+ style="text-align: left; width: 800px; margin-left: auto; margin-right: auto;"
+ border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">
+      <h2>The experiment is over. Thanks a lot for taking part.</h2>
+      <div style="text-align: left;">This experiment was designed to
+present you with some of the capabilities of PsychoPy together with
+PsyTML.<br>
+      <br>
+I hope you liked it.<br>
+      <br>
+Note, the password is <span style="font-weight: bold;">lmo</span>
+(i.e., let me out).<br>
+      <br>
+      </div>
+      <img style="width: 315px; height: 314px;" alt=""
+ src="images/thumps_up.png"><br><br><br>
+      <form method="get" name="password" onsubmit="return check_pw()">Enter Password to exit:&nbsp;<input
+ name="password" type="password"><br>
+        <div style="text-align: right;"><input value="Exit"
+ type="submit"><br>
+        </div>
+      </form>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+</body>
+</html>

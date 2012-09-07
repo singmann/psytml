@@ -6,28 +6,20 @@ from PyQt4 import QtGui
 def main():
 
     app = QtGui.QApplication(sys.argv)
-    file = "./sampleHTML/item1.html"
-    item_html1 = "file:///" + os.path.abspath(file).replace("\\", "/")
-    file = "./sampleHTML/item2.html"
-    item_html2 = "file:///" + os.path.abspath(file).replace("\\", "/")
-    file = "./sampleHTML/intro1.html"
-    intro_html = "file:///" + os.path.abspath(file).replace("\\", "/")
-    file = "./sampleHTML/demographics.html"
-    demo_html = "file:///" + os.path.abspath(file).replace("\\", "/")
 
-    intro = PsyTML.PsyTML((900, 400), (200, 200))
-    intro.viewPsyTML(intro_html)
+    intro = PsyTML.PsyTML((900, 400), True)
+    intro.viewPsyTML("./sampleHTML/intro1.html")
     
-    item = PsyTML.PsyTML((900, 800), (200, 200))
-    item.viewPsyTML(item_html1)    
+    item = PsyTML.PsyTML((900, 800), (0, 0))
+    item.viewPsyTML("./sampleHTML/item1.html")    
     results1 = item.data
-    item.viewPsyTML(item_html2)
+    item.viewPsyTML("./sampleHTML/item2.html")
     results2 = item.data
     
     # Note the demographics use jsVal (by Karl Seguin & Timo Haberkern) relaesed under LGPL
     # (and are in German-)
     demographics = PsyTML.PsyTML((900, 500), (200, 200))
-    demographics.viewPsyTML(demo_html)    
+    demographics.viewPsyTML("./sampleHTML/demographics.html")    
     demographic_data = demographics.data
     
     print(results1)
