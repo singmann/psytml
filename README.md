@@ -1,4 +1,4 @@
-pytml
+PsyTML
 =====
 
-display html pages on localhost without borders
+display html pages locally without borders
