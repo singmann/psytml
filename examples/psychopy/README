@@ -7,7 +7,7 @@ data folder.
 Note that you should set your monitor in PsychoPy1.py (line 30) before
 running the script.
 
-For help on PsyTML.py see README in the PsyTML folder.
+For help on psytml.py see README in the psytml folder.
 
 helper.py contains a few helper function for running an experiment:
     * getId(path = ".", filename = 'id.lst', condition = True)

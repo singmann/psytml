@@ -1,18 +1,18 @@
 PsyTML
 ======
 
-PsyTML.py contains a class for displaying a borderless html page (always on
+psytml.py contains a class for displaying a borderless html page (always on
 top) with html forms. The html form needs to use method "get", then the
 results are collected in object.data (i.e. a slot data of the object
 created by the main class PsyTML).
 
 
-*PsyTML.py* contains the following classes:
+*psytml.py* contains the following classes:
 
     * show_form(filename, size, position)
         shows a html form and returns the response as a Python dict
 
-    * PsyTml(self, size, position)
+    * PsyTML(self, size, position)
         create an object for presenting html files
         o  *size* is the size of the html in pixel
         o  *position* is either a list of length two indicating the

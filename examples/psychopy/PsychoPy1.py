@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# last mod 2012-09-20 22:05 KS
+# last mod 2012-09-20 22:09 KS
 
 """
 example that shows how to use PsyTML and PsychoPy together.
@@ -12,7 +12,7 @@ example that shows how to use PsyTML and PsychoPy together.
 """
 
 import sys # needed only for initializing the QT App
-sys.path.append("../../") # include folder, where the PsyTML.py file is in
+sys.path.append("../../") # include folder, where the psytml.py file is in
 import functools # set default arguments in function
 
 ## import all libraries that are needed
@@ -20,7 +20,7 @@ from psychopy import visual, event, core # needed for PsychoPy functionality
 from PyQt4 import QtGui # needed for initializing Qt
 from numpy import random as rnd # needed for randomizing the trial order
 
-import PsyTML # needed to present the HTML pages
+import psytml # needed to present the HTML pages
 import helper #needed for getting the id, condition and writing data.
 
 ## Parameters for the experiment
@@ -56,7 +56,7 @@ mouse.setVisible(True)
 win.flip()
 
 # set default size and position with functools to simplify repeated use
-show_form_intro = functools.partial(PsyTML.show_form, size=(900, 700),
+show_form_intro = functools.partial(psytml.show_form, size=(900, 700),
         position=(0, 0)) # in contrast to PsychoPy Position starts in the
                          # upper left corner. position=None to center form
 show_form_intro("html/intro1.html")
@@ -94,9 +94,9 @@ win.flip()
 win.flip() # on some graphics cards win.flip must be called twice to get an
            # empty screen
 
-## Present html trials with PsyTML
+## Present html trials with psytml
 for trial_num, item in enumerate(items):
-    data_trial = PsyTML.show_form(item, (900, 700), None)
+    data_trial = psytml.show_form(item, (900, 700), None)
     data_trial.update({"id":id_, "condition":condition, "trial": trial_num+1})        # here you could add other information that should be written to each trial.
     data.append(data_trial) # add current trial to the data list.
 
