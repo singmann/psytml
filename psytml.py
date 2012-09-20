@@ -4,7 +4,7 @@
 # (http://stackoverflow.com/users/984421/ekhumoro)
 # and Konstantin Sering <konstantin.sering [at] gmail.com>
 # License: GPL v3
-# last mod 2012-09-20 22:02 KS
+# last mod 2012-09-20 22:16 KS
 
 """
 psytml provides a convenient way to present a html form at the screen and get
@@ -83,6 +83,8 @@ class PsyTML(QtGui.QDialog):
 
     * sometimes runs into troubles, when non ascii letters are used in a text
       field
+    * does not run with fullscreen mode in psychopy -- at least under ubuntu
+      12.4
 
     """
     def __init__(self, size=(800, 600), position=None):
