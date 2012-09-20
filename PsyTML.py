@@ -4,7 +4,7 @@
 # (http://stackoverflow.com/users/984421/ekhumoro)
 # and Konstantin Sering <konstantin.sering [at] gmail.com>
 # License: GPL v3
-# last mod 2012-09-20 21:09 KS
+# last mod 2012-09-20 22:02 KS
 
 """
 psytml provides a convenient way to present a html form at the screen and get
@@ -17,7 +17,7 @@ from PyQt4 import QtCore, QtGui, QtWebKit
 import os
 
 
-def show_form(filename, size=(800, 600), position=None):
+def show_form(filename, size=(800, 600), position=None, fullscreen=False):
     """
     shows the form and returns the get variables as a Python dict.
 
@@ -34,17 +34,17 @@ def show_form(filename, size=(800, 600), position=None):
         if None QtWebKit default position is used, otherwise the position
         given in a tuple containing the left top pixel position of the
         window.
+    fullscreen : *False* or True
+        if True window state is set to WindowFullScreen.
 
     """
     html_form = PsyTML(size, position)
-    html_form.viewPsyTML(filename)
+    html_form.viewPsyTML(filename, fullscreen=fullscreen)
     return html_form.data
 
 class MyWebPage(QtWebKit.QWebPage):
     """
-    a small webpage handling the navigation bar ??.
-
-    Why do we need this class?
+    a small web page based on the Qt webkit.
 
     """
     formSubmitted = QtCore.pyqtSignal(object)
@@ -114,11 +114,14 @@ class PsyTML(QtGui.QDialog):
         self.view.setPage(MyWebPage())
         self.view.page().formSubmitted.connect(self.handleFormSubmitted)
 
-    def viewPsyTML(self, html):
+    def viewPsyTML(self, html, fullscreen=False):
         """
         load a html file and present it on the screen.
 
         """
+        self.setWindowState(QtCore.Qt.WindowActive)
+        if fullscreen:
+            self.setWindowState(QtCore.Qt.WindowFullScreen)
         if os.path.isfile(html):
             page = "file:///" + os.path.abspath(html).replace("\\", "/")
             self.view.setUrl(QtCore.QUrl(page))

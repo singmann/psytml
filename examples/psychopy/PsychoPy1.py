@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# last mod 2012-09-20 21:11 KS
+# last mod 2012-09-20 22:05 KS
 
 """
 example that shows how to use PsyTML and PsychoPy together.
@@ -13,7 +13,7 @@ example that shows how to use PsyTML and PsychoPy together.
 
 import sys # needed only for initializing the QT App
 sys.path.append("../../") # include folder, where the PsyTML.py file is in
-import functools
+import functools # set default arguments in function
 
 ## import all libraries that are needed
 from psychopy import visual, event, core # needed for PsychoPy functionality
@@ -61,7 +61,7 @@ show_form_intro = functools.partial(PsyTML.show_form, size=(900, 700),
                          # upper left corner. position=None to center form
 show_form_intro("html/intro1.html")
 
-## Show some PsychoPy stuff (copied form aperture demo)
+## Show some PsychoPy stuff (copied from aperture demo)
 mouse.setVisible(False)
 gabor1 = visual.PatchStim(win, mask='circle', pos=[0.2, 0.2],
     sf=4, size=.4,
@@ -83,7 +83,6 @@ while True:
         gabor2.draw()
         select = "gabor1"
     text.draw()
-
     win.flip()
     core.wait(0.1)
     if "q" in event.getKeys():
@@ -92,7 +91,7 @@ while True:
 # make the psychopy window empty and show mouse again
 mouse.setVisible(True)
 win.flip()
-win.flip() # on some graphicscards win.flip must be called twice to get an
+win.flip() # on some graphics cards win.flip must be called twice to get an
            # empty screen
 
 ## Present html trials with PsyTML
@@ -115,7 +114,7 @@ helper.writeTrials(header=data_header, list=data, path=DATA_FOLDER,
 demographics = show_form_intro("html/demographics.html")
 comments = show_form_intro("html/end.html")
 
-## Write demographc data and comments
+## Write demographic data and comments
 demographics_header = ["sex", "age", "education", "glasses1", "glasses2"]
 helper.writeDemographics(demographics_header, demographics,
         DATA_FOLDER, EXP_NAME, id_, condition, sep=";")
