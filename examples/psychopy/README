@@ -1,5 +1,5 @@
-This folder contains an example experiment written by Henrik Singmann in 
-Septemeber 2012 using PsychoPy and PsyTML.
+This folder contains an example experiment written by Henrik Singmann and
+Konstantin Sering in Septemeber 2012 using PsychoPy and PsyTML.
 
 The experiment is contained in PsychoPy1.py, the data is written to the
 data folder.
@@ -23,13 +23,13 @@ helper.py contains a few helper function for running an experiment:
 
     * writeDemographics(header, list, path, expName, id, sep = "\t", part = '', 
        extension = '.rtd', mode = 'w', print_header = True)
-        (write a list of dictionanaries with the same keys to the specified path.)
+       (write a list of dictionanaries with the same keys to the specified path.)
 
-    writeDemographics(header, dict, path, expName, id, condition, sep = "\t", 
+    * writeDemographics(header, dict, path, expName, id, condition, sep = "\t", 
        extension = '_demographics.dat', mode = 'a')
         (append a dictionary containing demographic data to a file.)
 
-    writeComments(comment, path, id, expName)
+    * writeComments(comment, path, id, expName)
         (write comments in a comments folder which will be created if not there.)
 
 id.lst: is a file containing the participant numbers (id) and condition.
@@ -42,5 +42,6 @@ html (folder): contains the html, css, and js files with the introduction, stimu
 
 data (folder): data folder
 
-contact: henrik.singmann (at) psychologie.uni-freiburg.de
+contact: henrik.singmann (at) psychologie.uni-freiburg.de or
+konstantin.sering (at) gmail.com
 

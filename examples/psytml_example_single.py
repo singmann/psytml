@@ -7,13 +7,13 @@ sys.path.append("../") # include folder, where the PsyTML.py file is in
 import PsyTML
 from PyQt4 import QtGui
 
-def main():
-    app = QtGui.QApplication(sys.argv)
-    item = PsyTML.PsyTML((900, 500))
-    item.viewPsyTML("./sampleHTML/item1.html")
-    results = item.data
-    print(results)
+app = QtGui.QApplication(sys.argv)
+results = PsyTML.show_form("./sampleHTML/item1.html", size=(900, 600))
+print(results)
+resp = int(results["resp"])
 
-if __name__ == "__main__":
-    main()
+if resp < 0:
+    print("unsatisfied")
+else:
+    print("satisfied or neutral")
 
