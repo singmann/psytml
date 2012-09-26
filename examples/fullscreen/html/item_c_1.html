@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="design.css">
+  <script language="JavaScript">
+<!--
+function radio_button_checker()
+{
+// set var radio_choice to false
+var radio_choice = false;
+
+// Loop from zero to the one minus the number of radio button selections
+for (counter = 0; counter < form1.resp.length; counter++)
+{
+// If a radio button has been selected it will return true
+// (If not it will return false)
+if (form1.resp[counter].checked)
+radio_choice = true; 
+}
+
+if (!radio_choice)
+{
+// If there were no selections made display an alert box 
+alert("Please give a response.")
+return (false);
+}
+return (true);
+}
+
+-->
+  </script>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>form1</title>
+</head>
+<body>
+<table
+ style="text-align: left; width: 800px; margin-left: auto; margin-right: auto;"
+ border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr align="left">
+      <td style="vertical-align: top;">
+      <h2 style="text-align: center;">"Sexual lyrics prompt teens to
+have sex"</h2>
+&nbsp;<br>
+Youths ages 12-17 who listen to music with sexually degrading and
+explicit lyrics are more likely to have intercourse at an earlier age
+than peers who listen to lyrics where sex is depicted less explicitly,
+a new study suggests. Researchers surveyed 1,461 teens by telephone in
+2001 and conducted follow-up interviews in 2002 and 2004.<br>
+      <br>
+Teens who listened frequently to explicit music were almost twice as
+likely to initiate intercourse or other sexual activity during the
+two-year study as were teens who listened to little or no sexually
+degrading music. <span style="font-weight: bold;">Among those who
+listened most to sexually degrading music, 51 percent reported having
+intercourse within two years, compared to 29 percent of little- or
+no-listeners.</span><br>
+      <br>
+Of all teenagers interviewed, <span style="text-decoration: underline;">31
+percent reported to frequently listen to sexually degrading music</span>.<br>
+      <br>
+This study indicates, therefore, that exposure to sexually degrading
+music causes such youths to be less thoughtful or inhibited about
+sexual decisions.<br>
+      <br>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">
+      <div style="text-align: center;"> </div>
+      <form name="form1" method="get"
+ onsubmit="return radio_button_checker()">
+        <div style="text-align: center;"> </div>
+        <table
+ style="text-align: left; margin-left: auto; margin-right: auto;"
+ border="0" cellpadding="2" cellspacing="2">
+          <caption>The hypothesis <span style="font-style: italic;">h</span>
+explains the fact <span style="font-style: italic;">e</span>:<br>
+          </caption> <tbody>
+            <tr>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;">very <br>
+unsatisfising<br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;"><br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;"><br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;"><br>
+neutral<br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;"><br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;"><br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;">very <br>
+satisfising<br>
+              </td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="-3" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="-2" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="-1" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="0" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="1" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="2" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="3" type="radio"><br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <input name="content" value="sexual_lyric" type="hidden">
+		<input name="causal" value="causal" type="hidden">
+		<input name="power" value="strong" type="hidden"><br>
+        <div style="text-align: right;"><input name="Next" value="Next"
+ type="submit"><br>
+        </div>
+        <div style="text-align: right;"><br>
+        </div>
+      </form>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+</body>
+</html>

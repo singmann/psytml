@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="design.css">
+  <script language="JavaScript">
+<!--
+function radio_button_checker()
+{
+// set var radio_choice to false
+var radio_choice = false;
+
+// Loop from zero to the one minus the number of radio button selections
+for (counter = 0; counter < form1.resp.length; counter++)
+{
+// If a radio button has been selected it will return true
+// (If not it will return false)
+if (form1.resp[counter].checked)
+radio_choice = true; 
+}
+
+if (!radio_choice)
+{
+// If there were no selections made display an alert box 
+alert("Please give a response.")
+return (false);
+}
+return (true);
+}
+
+-->
+  </script>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>form1</title>
+</head>
+<body>
+<table
+ style="text-align: left; width: 800px; margin-left: auto; margin-right: auto;"
+ border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr align="left">
+      <td style="vertical-align: top;">
+      <h2 style="text-align: center; font-weight: normal;">"Over-Indebtedness
+      <span style="font-weight: bold;">leads to</span> obesity"</h2>
+&nbsp;<br>
+According to a recent study, over-indebted Germans are more likely to
+be overweight or
+obese than the population in general. but most particularly to the
+psychological and social
+stress experienced by over-indebted individuals.<br>
+      <br>
+Data were collected for a total of more than 9000 persons. Of the 949
+over-indebted persons
+who completed the questionnaire sent out by the researchers, 25% were
+obese. By way of
+comparison, only 11% of the remaining 8318 subjects were obese.<br>
+      <br>
+This corresponds to an over-indebtedness rate of about 10% in the
+sample collected by the
+researchers.<br>
+      <br>
+The survey indicates therefore that over-indebtedness <span
+ style="font-weight: bold;">causes</span> individuals to be overweight,
+that is, clinically obese.<br>
+      <br>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">
+      <div style="text-align: center;"> </div>
+      <form name="form1" method="get"
+ onsubmit="return radio_button_checker()">
+        <div style="text-align: center;"> </div>
+        <table
+ style="text-align: left; margin-left: auto; margin-right: auto;"
+ border="0" cellpadding="2" cellspacing="2">
+          <caption>The hypothesis <span style="font-style: italic;">h</span>
+explains the fact <span style="font-style: italic;">e</span>:<br>
+          </caption> <tbody>
+            <tr>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;">very <br>
+unsatisfising<br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;"><br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;"><br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;"><br>
+neutral<br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;"><br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;"><br>
+              </td>
+              <td
+ style="vertical-align: top; text-align: center; width: 70px;">very <br>
+satisfising<br>
+              </td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="-3" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="-2" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="-1" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="0" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="1" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="2" type="radio"><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><input
+ name="resp" value="3" type="radio"><br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+		<input name="content" value="obesity" type="hidden">
+        <input name="causal" value="causal" type="hidden"><input
+ name="power" value="strong" type="hidden"><br>
+        <div style="text-align: right;"><input name="Next" value="Next"
+ type="submit"><br>
+        </div>
+        <div style="text-align: right;"><br>
+        </div>
+      </form>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <style type="text/css" media="all">@import "demographics.css";</style>
+  <title>Demographics</title>
+  <script language="javascript" src="jsval.js"></script>
+</head>
+<body>
+<form name="test" method="get"
+ onsubmit="return validateCompleteForm(this, 'error');"> <br>
+  <table style="width: 700px; text-align: left;" align="center"
+ border="0">
+    <tbody>
+      <tr>
+        <td>
+        <table>
+          <tbody>
+            <tr>
+              <td> <span class="big">At the end of the experiment we
+want to ask you for some demographic data.</span> </td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="height: 50px; width: 100%;" border="0"
+ cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td><br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <table>
+          <tbody>
+            <tr>
+              <td style="width: 400px;"><b>What is your gender?<br>
+              </b></td>
+              <td
+ style="width: 50px; text-align: center; font-size: 75%; font-weight: bold;">female<br>
+              <input class="button" required="0" realname="Gender"
+ name="sex" value="female" type="radio"> </td>
+              <td
+ style="width: 50px; text-align: center; font-size: 75%; font-weight: bold;">male<br>
+              <input class="button" name="sex" value="male" type="radio"> </td>
+              <td
+ style="width: 50px; text-align: center; font-size: 75%; font-weight: bold;">neither<br>
+              <input class="button" name="sex" value="neither" type="radio"> </td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="height: 50px; width: 100%;" border="0"
+ cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td>
+              <hr style="vertical-align: middle;"></td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td style="width: 400px;"><b>How old are you<br>
+              </b></td>
+              <td
+ style="width: 50px; text-align: left; font-size: 75%; font-weight: bold;">
+              <input size="1" name="age" minvalue="16" maxvalue="65"
+ required="0" realname="age"> </td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="height: 50px; width: 100%;" border="0"
+ cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td>
+              <hr style="vertical-align: middle;"></td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td style="width: 400px;"><b>What is your highest degree?<br>
+              </b></td>
+              <td>
+              <table style="text-align: left; width: 100px;" border="0"
+ cellpadding="2" cellspacing="2">
+                <tbody>
+                  <tr>
+                    <td style="vertical-align: top;">
+                    <select name="education" required = "1" realname = "Education">
+                    <option>Please select</option>
+                    <option>no highschool</option>
+                    <option>highschool</option>
+                    <option>bachelor</option>
+                    <option>master</option>
+                    <option>PhD</option>
+                    </select>
+                    <br>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="height: 50px; width: 100%;" border="0"
+ cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td>
+              <hr style="vertical-align: middle;"></td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td style="width: 400px;"><b>Do you need glasses or
+contact lenses?<br>
+              </b></td>
+              <td>
+              <table>
+                <tbody>
+                  <tr>
+                    <td
+ style="width: 50px; text-align: center; font-size: 75%; font-weight: bold;">Yes<br>
+                    <input class="button" required="1"
+ realname="Glasses" name="glasses1" value="glasses_yes" type="radio"></td>
+                    <td
+ style="width: 50px; text-align: center; font-size: 75%; font-weight: bold;">No<br>
+                    <input class="button" name="glasses1" value="glasses_no"
+ type="radio"></td>
+                  </tr>
+                </tbody>
+              </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="height: 10px; width: 100%;" border="0"
+ cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td><br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td style="width: 400px;"><b>If yes, did you wear them
+during the experiment?<br>
+              </b></td>
+              <td>
+              <table>
+                <tbody>
+                  <tr>
+                    <td
+ style="width: 50px; text-align: center; font-size: 75%; font-weight: bold;">Yes<br>
+                    <input class="button" realname="Brille2" name="glasses2" value="wore_glasses_yes" type="radio"></td>
+                    <td
+ style="width: 50px; text-align: center; font-size: 75%; font-weight: bold;">No<br>
+                    <input class="button" name="glasses2" value="wore_glasses_no"
+ type="radio"></td>
+                  </tr>
+                </tbody>
+              </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="height: 50px; width: 100%;" border="0"
+ cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td><br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div align="right"><input class="weiter" value="Continue"
+ type="submit"></div>
+        <table style="height: 50px; width: 100%;" border="0"
+ cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td><br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</body>
+</html>
