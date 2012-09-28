@@ -9,25 +9,25 @@ created by the main class PsyTML).
 
 *PsyTML.py* contains the following classes:
 
-    * PsyTml(self, size, position = True)
+    * PsyTml(self, size, position=None)
         (create an object for presenting html files)
         o  *size* is the size of the html in pixel
         o  *position* is either a list of length two indicating the
-            position (origin is top left) or True which corresponds to a
-            central position.
+           position (origin is top left) or None which results in centering
+           the window.
 
     * PsyTML has one method: viewPsyTml(self, html)
         (display the specified html page)
         o  *html* string with the location of an html file to be presented
 
-    * Start(self, id, condition = False)
+    * Start(self, id, condition=False)
         (show a dialog with id and possibly condition. This class was
         written, because for the first time a PyQt Window is displayed
         above a pyglet window, the background does not have the correct
         color. After running Start, it works)
         o  *id* Participant id
         o  *condition* Participant condition, the default (False) shows no
-            condition.
+           condition.
 
 The examples folder contains some simple examples.
 
