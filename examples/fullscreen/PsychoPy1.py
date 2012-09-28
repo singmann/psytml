@@ -1,18 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys # needed only for initializing the QT App
+sys.path.append("../../") # include folder, where the PsyTML.py file is in
+
 ## import all libraries that are needed
 from psychopy import visual, event, core, monitors          # needed for PsychoPy functionality
 import os       # needed for constructing well formed paths to HTML files
 from PyQt4 import QtGui         # needed for initializing Qt
-import sys      # needed only for initializing the QT App
 from numpy import random as rnd     # needed for randomizing the trial order
 import PsyTML       # needed to present the HTML pages
 import helper       #needed for getting the id, condition and writing data.
 
 ## Parameters for the experiment
 expName = "example1"
-bgColor = 	"#c0c0c0"
+bgColor = "#c0c0c0"
 data_folder = "data"
 
 data = []       # empty list that will collect the data per trial (as Python dictionnaries)
@@ -70,7 +72,7 @@ helper.writeTrials(header = data_header, list = data, path = data_folder, expNam
 ## Get demographic data and show final screens
 #Note the demographics use jsVal (by Karl Seguin & Timo Haberkern) relaesed under LGPL
 demographics = PsyTML.PsyTML((900, 700))    # html is centered on screen.
-demographics.viewPsyTML("html/demographics.html")    
+demographics.viewPsyTML("html/demographics.html")
 demographic_data = demographics.data
 demographics.viewPsyTML("html/end.html")
 comments = demographics.data

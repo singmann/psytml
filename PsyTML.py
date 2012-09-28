@@ -1,7 +1,7 @@
 # version 1.0: 7th September 2012
 # Henrik Singmann with help from ekhumoror (http://stackoverflow.com/users/984421/ekhumoro)
 # License: GPL v3
-# last mod 2012-09-20 13:42 KS
+# last mod 2012-09-28 16:14 KS
 
 """
 psytml provides a convenient way to present a html form at the screen and get
@@ -59,7 +59,7 @@ class PsyTML(QtGui.QDialog):
       field
 
     """
-    def __init__(self, size, position=True):
+    def __init__(self, size, position=None):
         """
         Parameters
         ----------
