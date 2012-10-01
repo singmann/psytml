@@ -101,8 +101,3 @@ def writeComments(comment, path, id, expName):
         commentFile.close()
     
     
-    
-    
-    
-    
-    
