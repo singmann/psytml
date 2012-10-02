@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# last mod 2012-10-02 10:05 KS
+# last mod 2012-10-02 10:01 KS
 
 """
 example that shows how to use PsyTML and PsychoPy together.
@@ -37,9 +37,13 @@ data = []
 id_, condition = helper.getId(PATH_ID_FILE)
 
 app = QtGui.QApplication(sys.argv) # initialize QT App
+# Extract screen width and height with QtGui. You can also set this manually,
+# by assigning values to width and height
+screen_size = QtGui.QApplication.desktop().size()
+width, height = screen_size.width(), screen_size.height()
 
 # initialize Windows and Mouse object from PsychoPy
-win = visual.Window((1366, 768), monitor='testMonitor', fullscr=False,
+win = visual.Window((width, height), monitor='testMonitor', fullscr=False,
         allowGUI=False, units='norm', color=BG_COLOR, winType='pyglet')
 mouse = event.Mouse(win=win, visible=True)
 

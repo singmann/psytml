@@ -8,7 +8,7 @@ import psytml
 from PyQt4 import QtGui
 
 app = QtGui.QApplication(sys.argv)
-results = psytml.show_form("./sampleHTML/item1.html", size=(900, 600))
+results = psytml.show_form("./sampleHTML/item_nc_1.html", size=(900, 600))
 print(results)
 resp = int(results["resp"])
 

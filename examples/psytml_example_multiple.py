@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# last mod 2012-09-20 22:12 KS
+# last mod 2012-10-02 10:03 KS
 import sys
 sys.path.append("../") # include folder, where the psytml.py file is in
 import functools
@@ -16,8 +16,8 @@ def main():
             size= (900, 600), position=(0, 0))
 
     psytml.show_form("./sampleHTML/intro1.html", (900, 400), None)
-    results1 = show_form_defaults("./sampleHTML/item1.html")
-    results2 = show_form_defaults("./sampleHTML/item2.html")
+    results1 = show_form_defaults("./sampleHTML/item_c_1.html")
+    results2 = show_form_defaults("./sampleHTML/item_c_2.html")
 
     # Note the demographics use jsVal (by Karl Seguin & Timo Haberkern)
     # released under LGPL (and are in German)
