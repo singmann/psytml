@@ -1,15 +1,18 @@
 PsyTML
 ======
 
-PsyTML.py contains a class for displaying a borderless html page (always on
+psytml.py contains a class for displaying a borderless html page (always on
 top) with html forms. The html form needs to use method "get", then the
 results are collected in object.data (i.e. a slot data of the object
 created by the main class PsyTML).
 
 
-*PsyTML.py* contains the following classes:
+*psytml.py* contains the following classes:
 
-- PsyTml(self, size, position=None)
+- show_form(filename, size, position)
+        shows a html form and returns the response as a Python dict
+
+- PsyTml(self, size=(800, 600), position=None)
         (create an object for presenting html files)
 
         -  *size* is the size of the html in pixel
@@ -22,20 +25,21 @@ created by the main class PsyTML).
 
         -  *html* string with the location of an html file to be presented
 
-- Start(self, id, condition=False)
-        (show a dialog with id and possibly condition. This class was
-        written, because for the first time a PyQt Window is displayed
-        above a pyglet window, the background does not have the correct
-        color. After running Start, it works)
-
-        -  *id* Participant id
-        -  *condition* Participant condition, the default (False) shows no
-           condition.
-
 The examples folder contains some simple examples.
 
 **The examples/psychopy folder contains PsychoPy1.py a "complete"
 experiment using PsychoPy and PyTML.**
 
-Henrik Singmann, September 2012
+Known Issus
+-----------
+
+* Does not run with psychopy full screen mode. If psychopy is run in
+  full screen mode, the PsyTML window does not show up and the whole
+  program "dead locks". (We are working on that :) )
+* Some issues with non ascii characters in html text fields. Non ascii
+  characters does not break the program, but you can sometimes only
+  continue, when you remove all characters PsyTML does not like in the text
+  field.
+
+Henrik Singmann and Konstantin Sering, September 2012
 

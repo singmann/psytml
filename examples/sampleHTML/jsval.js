@@ -1,7 +1,3 @@
-// jsVal is a JavaScript form validation framework. jsVal is a JavaScript program used for validating HTML Forms on the client side 
-// jsVal was originaly written by Karl Seguin and is now maintained by Timo Haberkern.
-// jsVal is distributed under the LGPL:
-// http://www.gnu.org/licenses/lgpl.html
 
 function validateCompleteForm(objForm,strErrorClass){
 return _validateInternal(objForm,strErrorClass,0);
@@ -80,7 +76,7 @@ return i;
 return -1;
 };
 function _jsVal_Language(){
-this.err_form="Bitte beantworten Sie die folgenden Items:   \n\n";
+this.err_form="Please enter/select values for the following fields:\n\n";
 this.err_select="Please select a valid \"%FIELDNAME%\"";
 this.err_enter="Please enter a valid \"%FIELDNAME%\"";
 };

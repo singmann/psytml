@@ -1,7 +1,10 @@
-# version 1.0: 7th September 2012
-# Henrik Singmann with help from ekhumoror (http://stackoverflow.com/users/984421/ekhumoro)
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Copyright (C) 2012 Henrik Singmann with help from ekhumoror
+# (http://stackoverflow.com/users/984421/ekhumoro)
+# and Konstantin Sering <konstantin.sering [at] gmail.com>
 # License: GPL v3
-# last mod 2012-09-28 16:14 KS
+# last mod 2012-10-02 10:15 KS
 
 """
 psytml provides a convenient way to present a html form at the screen and get
@@ -13,14 +16,37 @@ from urllib import unquote_plus
 from PyQt4 import QtCore, QtGui, QtWebKit
 import os
 
+
+def show_form(filename, size=(800, 600), position=None, fullscreen=False):
+    """
+    shows the form and returns the get variables as a Python dict.
+
+    show_form has the same features and limitations as the PsyTML class.
+
+    Parameters
+    ----------
+
+    filename : string
+        path to html file containing the form.
+    size : *(800, 600)* or tuple
+        tuple containing the width and the height of the window in pixel.
+    position : *None* or tuple
+        if None QtWebKit default position is used, otherwise the position
+        given in a tuple containing the left top pixel position of the
+        window.
+    fullscreen : *False* or True
+        if True window state is set to WindowFullScreen.
+
+    """
+    html_form = PsyTML(size, position)
+    html_form.viewPsyTML(filename, fullscreen=fullscreen)
+    return html_form.data
+
 class MyWebPage(QtWebKit.QWebPage):
     """
-    a small webpage handling the navigation bar ??.
-
-    Why do we need this class?
+    a small web page based on the Qt webkit.
 
     """
-
     formSubmitted = QtCore.pyqtSignal(object)
 
     def acceptNavigationRequest(self, frame, req, nav_type):
@@ -57,14 +83,17 @@ class PsyTML(QtGui.QDialog):
 
     * sometimes runs into troubles, when non ascii letters are used in a text
       field
+    * does not run with fullscreen mode in psychopy -- at least under ubuntu
+      12.4
 
     """
-    def __init__(self, size, position=None):
+
+    def __init__(self, size=(800, 600), position=None):
         """
         Parameters
         ----------
 
-        size : tuple
+        size : *(800, 600)* or tuple
             tuple containing the width and the height of the window in pixel
         position : *None* or tuple
             if None QtWebKit default position is used, otherwise the position
@@ -73,7 +102,8 @@ class PsyTML(QtGui.QDialog):
 
         """
         super(PsyTML, self).__init__()
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint |
+                QtCore.Qt.WindowStaysOnTopHint)
         self.resize(size[0], size[1])
 
         self.position = position
@@ -87,11 +117,14 @@ class PsyTML(QtGui.QDialog):
         self.view.setPage(MyWebPage())
         self.view.page().formSubmitted.connect(self.handleFormSubmitted)
 
-    def viewPsyTML(self, html):
+    def viewPsyTML(self, html, fullscreen=False):
         """
         load a html file and present it on the screen.
 
         """
+        self.setWindowState(QtCore.Qt.WindowActive)
+        if fullscreen:
+            self.setWindowState(QtCore.Qt.WindowFullScreen)
         if os.path.isfile(html):
             page = "file:///" + os.path.abspath(html).replace("\\", "/")
             self.view.setUrl(QtCore.QUrl(page))
@@ -121,63 +154,4 @@ class PsyTML(QtGui.QDialog):
         """
         self.data = elements
         self.accept()
-
-
-
-class Start(QtGui.QDialog):
-    def __init__(self, id, condition = False):
-        super(Start, self).__init__()
-        self.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
-        self.id = id
-        self.condition = condition
-        font = QtGui.QFont()
-        font.setPointSize (14)
-        self.setFont(font)
-        self.initUI()
-
-
-    def initUI(self):
-        id_lab = QtGui.QLabel('Id (#): ')
-        id_edit = QtGui.QLineEdit()
-        id_edit.setMaxLength(5)
-        id_edit.setText(str(self.id))
-        id_edit.setReadOnly(True)
-        okButton = QtGui.QPushButton("OK")
-        okButton.clicked.connect(self.close)
-        #cancelButton = QtGui.QPushButton("Cancel!")
-        #cancelButton.clicked.connect(QtCore.QCoreApplication.instance().quit)
-
-        hbox = QtGui.QHBoxLayout()
-        hbox.addWidget(id_lab)
-        hbox.addWidget(id_edit)
-        vBox = QtGui.QVBoxLayout()
-        vBox.addLayout(hbox)
-
-        if (self.condition != False):
-            hboxC = QtGui.QHBoxLayout()
-            condition_lab = QtGui.QLabel('Condition: ')
-            condition_edit = QtGui.QLineEdit()
-            condition_edit.setText(str(self.condition))
-            condition_edit.setReadOnly(True)
-            hboxC.addWidget(condition_lab)
-            hboxC.addWidget(condition_edit)
-            vBox.addLayout(hboxC)
-
-        hbox2 = QtGui.QHBoxLayout()
-        hbox2.addStretch(1)
-        #hbox2.addWidget(cancelButton)
-        hbox2.addWidget(okButton)
-
-        vBox.addLayout(hbox2)
-        self.setLayout(vBox)
-
-        self.setWindowTitle('Starting Experiment')
-        self.center()
-        self.exec_()
-
-    def center(self):
-        qr = self.frameGeometry()
-        cp = QtGui.QDesktopWidget().availableGeometry().center()
-        qr.moveCenter(cp)
-        self.move(qr.topLeft())
 
