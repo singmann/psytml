@@ -1,8 +1,8 @@
-body {color: navy; background: #ccccff}
-table {font: 13pt arial; color: navy; background: #ccccff}
-.big {font: 15pt arial; color: navy; background: #ccccff}
+body {color: black; background: #c0c0c0}
+table {font: 13pt arial; color: black; background: #c0c0c0}
+.big {font: 15pt arial; color: black; background: #c0c0c0}
 
-.intro {font: 15pt arial; color: navy; background: #ccccff}
+.intro {font: 15pt arial; color: black; background: #c0c0c0}
 .aspect {font: 13pt arial; color: black; background: white; width: 100%; border: 1px solid black}
 
 input.error, select.error {padding-right: 13px; border: 2px solid red; background-color: #FFFCE2; background-image: url(images/warning_obj.gif); background-position: right; background-repeat: no-repeat;}
