@@ -35,11 +35,12 @@ Known Issus
 
 * Does not run with psychopy full screen mode. If psychopy is run in
   full screen mode, the PsyTML window does not show up and the whole
-  program "dead locks". (We are working on that :) )
+  program "dead locks". This, unfortunately is by design and cannot be 
+  changed (see [Issue 10](https://github.com/singmann/psytml/issues/10)).
 * Some issues with non ascii characters in html text fields. Non ascii
   characters does not break the program, but you can sometimes only
   continue, when you remove all characters PsyTML does not like in the text
   field.
 
-Henrik Singmann and Konstantin Sering, September 2012
+Henrik Singmann and Konstantin Sering, October 2012
 
