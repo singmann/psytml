@@ -30,17 +30,19 @@ The examples folder contains some simple examples.
 **The examples/psychopy folder contains PsychoPy1.py a "complete"
 experiment using PsychoPy and PyTML.**
 
-Known Issus
------------
+Known Issues
+------------
 
 * Does not run with psychopy full screen mode. If psychopy is run in
   full screen mode, the PsyTML window does not show up and the whole
   program "dead locks". This, unfortunately is by design and cannot be 
-  changed (see [Issue 10](https://github.com/singmann/psytml/issues/10)).
+  changed (see `Issue 10`_).
 * Some issues with non ascii characters in html text fields. Non ascii
   characters does not break the program, but you can sometimes only
   continue, when you remove all characters PsyTML does not like in the text
   field.
 
 Henrik Singmann and Konstantin Sering, October 2012
+
+.. _Issue 10: https://github.com/singmann/psytml/issues/10
 
