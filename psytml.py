@@ -4,7 +4,7 @@
 # (http://stackoverflow.com/users/984421/ekhumoro)
 # and Konstantin Sering <konstantin.sering [at] gmail.com>
 # License: GPL v3
-# last mod 2012-10-02 10:15 KS
+# last mod 2012-11-04 23:45 KS
 
 """
 psytml provides a convenient way to present a html form at the screen and get
@@ -154,4 +154,16 @@ class PsyTML(QtGui.QDialog):
         """
         self.data = elements
         self.accept()
+
+    def keyPressEvent(self, event):
+        """
+        overload keyPressEvent, to prevent <esc> from closing the window.
+
+        .. note::
+
+            This might not be the correct way of doing it, so feel free to
+            correct me and send a pull request.
+
+        """
+        pass
 
