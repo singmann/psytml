@@ -3,6 +3,7 @@
 # psytml_psychopy.py
 #
 # (c) 2012 Konstantin Sering <konstantin.sering [aet] gmail.com>
+# and Henrik Singmann
 #
 # GPL 3.0+ or (cc) by-sa (http://creativecommons.org/licenses/by-sa/3.0/)
 #
@@ -12,7 +13,7 @@
 # output: --
 #
 # created 2012-11-04 KS
-# last mod 2012-11-04 23:11 KS
+# last mod 2012-11-08 17:45 HS
 
 """
 This module implements some psychopy specific behaviours and capsulates the
@@ -27,7 +28,7 @@ from psychopy import misc
 from psytml import PsyTML
 
 def show_form(filename, size=(800, 600), position=None, fullscreen=False,
-              units="pix", monitor=None, screen_resolution=None):
+              units="pix", monitor=None):
     """
     shows the form and returns the get variables as a Python dict.
 
@@ -41,9 +42,9 @@ def show_form(filename, size=(800, 600), position=None, fullscreen=False,
     size : *(800, 600)* or tuple
         tuple containing the width and the height of the window in pixel.
     position : *None* or tuple
-        if None QtWebKit default position is used, otherwise the position
-        given in a tuple containing the left top pixel position of the
-        window.
+        if None screen center, otherwise the position given in a tuple 
+        containing the center of the window relative to the center of
+        the screen (positive values mean up/right)
     fullscreen : *False* or True
         if True window state is set to WindowFullScreen.
     units : "pix", "deg", "cm" (optional)
@@ -51,13 +52,10 @@ def show_form(filename, size=(800, 600), position=None, fullscreen=False,
         is different from "pix" monitor must be present. Default is "pix"
     monitor : psychopy.monitors.Monitor (optional)
         psychopy monitor object, that is used to convert units.
-    screen_resolution : tuple (optional)
-        screen_resolution (width, height) in pixel. Default to None. If None
-        psytml guesses the screen resolution via
+
 
     """
-    html_form = PsyTMLPsychopy(size, position, units, monitor,
-                               screen_resolution)
+    html_form = PsyTMLPsychopy(size, position, units, monitor)
     html_form.viewPsyTML(filename, fullscreen=fullscreen)
     return html_form.data
 
@@ -69,7 +67,7 @@ class PsyTMLPsychopy(PsyTML):
     """
 
     def __init__(self, size=(800, 600), position=None, units="pix",
-                 monitor=None, screen_resolution=None):
+                 monitor=None):
         """
         Parameters
         ----------
@@ -77,19 +75,16 @@ class PsyTMLPsychopy(PsyTML):
         size : *(800, 600)* or tuple
             tuple containing the width and the height of the window in pixel
         position : *None* or tuple
-            if None QtWebKit default position is used, otherwise the position
-            given in a tuple containing the left top pixel position of the
-            window.
+            if None screen center, otherwise the position given in a tuple 
+            containing the center of the window relative to the center of
+            the screen (positive values mean up/right)
         units : "pix", "deg", "cm" (optional)
             psychopy units to calculate size and position of the window. If
             units is different from "pix" monitor must be present. Default is
             "pix."
         monitor : psychopy.monitors.Monitor (optional)
             psychopy monitor object, that is used to convert units.
-        screen_resolution : tuple (optional)
-            screen_resolution (width, height) in pixel. Default to None. If
-            None psytml guesses the screen resolution via
-            PyQt4.QtGui.QApplication.desktop().size()
+
 
         """
         if units != "pix":
@@ -105,16 +100,13 @@ class PsyTMLPsychopy(PsyTML):
             size = [misc.cm2pix(x, monitor) for x in size]
             if position:
                 position = [misc.cm2pix(x, monitor) for x in position]
-
-        # make pixel relative to center of the monitor
-        if position:
-            screen = screen_resolution
-            if not screen_resolution:
-                screen_size = QtGui.QApplication.desktop().size()
-                screen = (screen_size.width(), screen_size.height())
-            position = (position[0] + int(screen[0]/2.) - int(size[0]/2.),
-                        position[1] + int(screen[1]/2.) - int(size[1]/2.))
-
+        elif units == "norm":
+            size = [int(monitor.getSizePix()[0] * size[0]), int(monitor.getSizePix()[1] * size[1])]
+            if position:
+                position = [int(monitor.getSizePix()[0] * position[0]), int(monitor.getSizePix()[1] * position[1])]
+        else:
+            raise ValueError("only 'pix', 'deg', 'cm', or 'norm' are accepted units.")
+        
         # call parent with calculated parameters
         super(PsyTMLPsychopy, self).__init__(size, position)
 

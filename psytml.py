@@ -4,7 +4,7 @@
 # (http://stackoverflow.com/users/984421/ekhumoro)
 # and Konstantin Sering <konstantin.sering [at] gmail.com>
 # License: GPL v3
-# last mod 2012-11-04 23:45 KS
+# last mod 2012-11-08 17:47 HS
 
 """
 psytml provides a convenient way to present a html form at the screen and get
@@ -31,9 +31,9 @@ def show_form(filename, size=(800, 600), position=None, fullscreen=False):
     size : *(800, 600)* or tuple
         tuple containing the width and the height of the window in pixel.
     position : *None* or tuple
-        if None QtWebKit default position is used, otherwise the position
-        given in a tuple containing the left top pixel position of the
-        window.
+        if None the screen center is used, otherwise the position given
+        in a tuple containing the position of the center of the window 
+        relative to the screen center is used (positive values mean up/right).
     fullscreen : *False* or True
         if True window state is set to WindowFullScreen.
 
@@ -96,9 +96,9 @@ class PsyTML(QtGui.QDialog):
         size : *(800, 600)* or tuple
             tuple containing the width and the height of the window in pixel
         position : *None* or tuple
-            if None QtWebKit default position is used, otherwise the position
-            given in a tuple containing the left top pixel position of the
-            window.
+            if None the screen center is used, otherwise the position
+            given in a tuple containing the position of the center of the window 
+            relative to the screen center is used (positive values mean up/right).
 
         """
         super(PsyTML, self).__init__()
@@ -107,8 +107,6 @@ class PsyTML(QtGui.QDialog):
         self.resize(size[0], size[1])
 
         self.position = position
-        if not position is None:
-            self.move(self.position[0], self.position[1])
         self.data = {}
         self.view = QtWebKit.QWebView(self)
         layout = QtGui.QVBoxLayout(self)
@@ -135,6 +133,8 @@ class PsyTML(QtGui.QDialog):
             return True
         if self.position is None:
             self.center()
+        else:
+            self.moveRelativeToCenter(self.position)
         self.exec_()
 
     def center(self):
@@ -144,6 +144,18 @@ class PsyTML(QtGui.QDialog):
         """
         qr = self.frameGeometry()
         cp = QtGui.QDesktopWidget().availableGeometry().center()
+        qr.moveCenter(cp)
+        self.move(qr.topLeft())
+    
+    def moveRelativeToCenter(self, position):
+        """
+        move window to specified pixel relative to the center of the screen.
+
+        """
+        qr = self.frameGeometry()
+        cp = QtGui.QDesktopWidget().availableGeometry().center()
+        cp.setX(cp.x() + position[0])
+        cp.setY(cp.y() - position[1])
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 

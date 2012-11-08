@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# last mod 2012-11-04 23:16 KS
+# last mod 2012-11-08 17:47 HS
 
 """
 Example for how to use "deg" and "cm" units from psychopy to use with psytml.
@@ -19,6 +19,10 @@ from PyQt4 import QtGui
 mon = monitors.Monitor('testMonitor')
 mon.setDistance(114)
 app = QtGui.QApplication(sys.argv)
+# norm
+results = show_form("./sampleHTML/item_nc_1.html", size=(0.6, 0.9),
+                    position=(0.1, 0.1), units="norm", monitor=mon)
+print(results)
 # cm
 results = show_form("./sampleHTML/item_nc_1.html", size=(25, 15),
                     position=(1, -1), units="cm", monitor=mon)
@@ -33,4 +37,3 @@ if resp < 0:
     print("unsatisfied")
 else:
     print("satisfied or neutral")
-
