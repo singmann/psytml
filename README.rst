@@ -1,34 +1,27 @@
 PsyTML
 ======
 
-psytml.py contains a class for displaying a borderless html page (always on
-top) with html forms. The html form needs to use method "get", then the
-results are collected in object.data (i.e. a slot data of the object
-created by the main class PsyTML).
+**psytml.py** contains the function ``show_form()`` for displaying a borderless 
+html page (always on top) with html forms (using method "get"). 
+Participants' responses are returned as a python dict.
+(Actually ``show_form`` wraps class ``PsyTML``.)
 
 
-*psytml.py* contains the following classes:
-
-- show_form(filename, size, position)
+- ``show_form(filename, size, position)``
         shows a html form and returns the response as a Python dict
+        
+        -  ``filename`` string, path to local html file containing the form.
+        -  ``size`` tuple containing the width and the height of the window in 
+           pixel.
+        -  ``position`` either a tuple indicating the position (of the center 
+           of the window, relative to the screen center) or None which 
+           results in centering the window.
 
-- PsyTml(self, size=(800, 600), position=None)
-        (create an object for presenting html files)
+**psytml_psychopy.py** adds a ``norm`` argument to ``show_form`` adding `PsychoPy Units`_ ``"deg"``, ``"cm"``, ``"norm"`` for specifying window size and position (needs PsychoPy and a `PsychoPy Monitor Object`_). 
 
-        -  *size* is the size of the html in pixel
-        -  *position* is either a list of length two indicating the
-           position (origin is top left) or None which results in centering
-           the window.
+- ``show_form(filename, size=(800, 600), position=None, units="pix", monitor)``
 
-- PsyTML has one method: viewPsyTml(self, html)
-        (display the specified html page)
-
-        -  *html* string with the location of an html file to be presented
-
-The examples folder contains some simple examples.
-
-**The examples/psychopy folder contains PsychoPy1.py a "complete"
-experiment using PsychoPy and PyTML.**
+The examples folder contains some examples, including a quasi complete experiment, see corresponding README.
 
 Known Issues
 ------------
@@ -42,7 +35,9 @@ Known Issues
   continue, when you remove all characters PsyTML does not like in the text
   field.
 
-Henrik Singmann and Konstantin Sering, October 2012
+Henrik Singmann and Konstantin Sering, November 2012
 
+.. _PsychoPy Monitor Object: http://www.psychopy.org/general/monitors.html
+.. _PsychoPy Units: http://www.psychopy.org/general/units.html
 .. _Issue 10: https://github.com/singmann/psytml/issues/10
 

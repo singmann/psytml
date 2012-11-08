@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# last mod 2012-10-02 10:05 KS
+# last mod 2012-11-08 18:45 HS
 
 """
 example that shows how to use PsyTML and PsychoPy together.
@@ -57,8 +57,7 @@ win.flip()
 
 # set default size and position with functools to simplify repeated use
 show_form_intro = functools.partial(psytml.show_form, size=(900, 700),
-        position=(0, 0)) # in contrast to PsychoPy Position starts in the
-                         # upper left corner. position=None to center form
+        position=(0, 0)) # same as position=None: screen center 
 show_form_intro("../sampleHTML/intro1.html")
 
 ## Show some PsychoPy stuff (copied from aperture demo)

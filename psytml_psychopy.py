@@ -13,7 +13,7 @@
 # output: --
 #
 # created 2012-11-04 KS
-# last mod 2012-11-08 17:45 HS
+# last mod 2012-11-08 18:40 HS
 
 """
 This module implements some psychopy specific behaviours and capsulates the
@@ -47,7 +47,7 @@ def show_form(filename, size=(800, 600), position=None, fullscreen=False,
         the screen (positive values mean up/right)
     fullscreen : *False* or True
         if True window state is set to WindowFullScreen.
-    units : "pix", "deg", "cm" (optional)
+    units : "pix", "deg", "cm", "norm" (optional)
         psychopy units to calculate size and position of the window. If units
         is different from "pix" monitor must be present. Default is "pix"
     monitor : psychopy.monitors.Monitor (optional)
@@ -78,7 +78,7 @@ class PsyTMLPsychopy(PsyTML):
             if None screen center, otherwise the position given in a tuple 
             containing the center of the window relative to the center of
             the screen (positive values mean up/right)
-        units : "pix", "deg", "cm" (optional)
+        units : "pix", "deg", "cm", "norm" (optional)
             psychopy units to calculate size and position of the window. If
             units is different from "pix" monitor must be present. Default is
             "pix."
