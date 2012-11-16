@@ -20,7 +20,7 @@ mon = monitors.Monitor('testMonitor')
 mon.setDistance(114)
 app = QtGui.QApplication(sys.argv)
 # norm
-results = show_form("./sampleHTML/item_nc_1.html", size=(0.6, 0.9),
+results = show_form("./sampleHTML/item_nc_1.html", size=(1.5, 0.75),
                     position=(0.1, 0.1), units="norm", monitor=mon)
 print(results)
 # cm

@@ -101,7 +101,7 @@ class PsyTMLPsychopy(PsyTML):
             if position:
                 position = [misc.cm2pix(x, monitor) for x in position]
         elif units == "norm":
-            size = [int(monitor.getSizePix()[0] * size[0]), int(monitor.getSizePix()[1] * size[1])]
+            size = [int(monitor.getSizePix()[0] * (float(size[0])/2)), int(monitor.getSizePix()[1] * (float(size[1])/2))]
             if position:
                 position = [int(monitor.getSizePix()[0] * position[0]), int(monitor.getSizePix()[1] * position[1])]
         else:
